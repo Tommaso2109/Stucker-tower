@@ -1,0 +1,196 @@
+/*
+COLOR PALETTE
+  black: rgb(0, 23, 50); #001732;
+  orange: rgb(241, 117, 78); #f1754e;
+  lightgreen: rgb(78, 241, 187); #4ef1bb;
+  bg-color: rgb(216, 238, 232);  #d8eee8;
+  bg-dark-color: rgb(203, 224, 221); #cbe0dd;
+  clicked-cell: rgb(157, 197, 199); #9dc5c7;
+*/
+
+/* CSS RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Regole generiche */
+body {
+	padding: 16px;
+	line-height: 1;
+	color: rgb(0, 23, 50);
+	background-color: #197;
+	font-family: 'Darker Grotesque', sans-serif;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	background-image:url('images/tower.avif');
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.game-container {
+	width: 484px;
+	text-shadow:
+        -1px -1px 0 #000, /* Contorno in alto a sinistra */
+        1px -1px 0 #000, /* Contorno in alto a destra */
+        -1px 1px 0 #000, /* Contorno in basso a sinistra */
+        1px 1px 0 #000; 
+}	
+
+/* Pannello di gioco */
+h1 {
+	font-size: 40px;
+	color: rgb(255, 0, 212);
+	text-align: center;
+	color:rgb(255, 0, 0)
+}
+
+h2{
+	font-size: 40px;
+	color: rgb(255, 0, 212);
+	text-align: center;
+	color:#fed439ff
+}
+
+h3{
+	font-size: 20px;
+	text-align: center;
+	color:rgb(236, 49, 49)
+}
+
+.score {
+	font-size: 32px;
+	display: flex;
+	justify-content: space-between;
+	color:rgb(255, 0, 0)
+}
+
+/* Tabellone di gioco */
+
+.game-board {
+	position: relative;
+	border: 2px solid rgb(0, 23, 50);
+	background-image: url('images/built.gif');
+	background-size: cover;
+	background-color: #71D0f5ff;
+	background-position: -60px;
+}
+
+.grid{
+	height: 480px;
+	width: 480px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+}
+
+
+.cell {
+	width: 48px; /* Imposta la larghezza desiderata per le celle */
+	height: 48px; /* Imposta l'altezza desiderata per le celle */
+}
+
+
+.bar{
+	background-image: url('images/bar.gif');
+	border-radius: 10%;
+	border: 2px solid rgb(0, 23, 50);
+}
+
+.cell-clicked,
+.cell-bomb{
+	cursor: not-allowed;
+}
+/* Schermata di fine gioco */
+.end-game-screen {
+	background-color: rgba(241, 117, 78, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	text-align: center;
+	-webkit-text-fill-color: #000;
+	text-shadow:
+        -1px -1px 0 #fed439ff, /* Contorno in alto a sinistra */
+        1px -1px 0 #fed439ff, /* Contorno in alto a destra */
+        -1px 1px 0 #fed439ff, /* Contorno in basso a sinistra */
+        1px 1px 0 #fed439ff;
+	background-image: url('images/lose.gif');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-position-y: top;
+
+	
+}
+
+.win {
+	background-color: rgba(78, 241, 187, 0.6);
+	background-image: url('images/win.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;	
+	background-position-y: top;
+	
+}
+
+.end-game-text {
+	font-size: 48px;
+	line-height: 1.2;
+	font-family: 'Press Start 2P', cursive;
+	margin-bottom: 16px;
+}
+
+.stackBtn{
+	margin-top: 20px;
+	width: 285px;
+	
+}
+
+.stackBtn button{
+	width: 285px;
+}
+
+
+.stackBtn:hover,
+.stackBtn:hover button{
+	background-color: #197;
+	position: relative;
+	border: 2px solid rgb(0, 23, 50);
+
+}
+
+button {
+	border: 2px solid rgb(0, 23, 50);
+	font-size: 35px;
+	font-family: 'Darker Grotesque', sans-serif;
+	text-transform: uppercase;
+	padding: 4px 20px 8px 20px;
+	cursor: pointer;
+	background-color: #71D0f5ff;
+	text-shadow:
+        -1px -1px 0 #000, /* Contorno in alto a sinistra */
+        1px -1px 0 #000, /* Contorno in alto a destra */
+        -1px 1px 0 #000, /* Contorno in basso a sinistra */
+        1px 1px 0 #000; /* Contorno in basso a destra */
+}
+
+button:hover {
+	background-color:#197;
+	position: relative;
+	border: 2px solid rgb(0, 23, 50);
+}
+
+.hidden {
+	display: none;
+}
